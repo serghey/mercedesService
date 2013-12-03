@@ -6,6 +6,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Mercedes Service Project</name>
+	<properties>
+		<!-- Build properties -->
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>net.sourceforge.jexcelapi</groupId>
@@ -38,6 +44,16 @@
 			<artifactId>spring-core</artifactId>
 			<version>3.2.5.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.5.RELEASE</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -49,7 +65,7 @@
 					<!-- <contextPath>/</contextPath> -->
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>8080</port>
+							<port>9999</port>
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
@@ -69,6 +85,16 @@
 					</systemProperties>
 				</configuration>
 			</plugin>
+			<plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
