@@ -70,7 +70,7 @@
 						</connector>
 					</connectors>
 					<webAppConfig>
-						<contextPath>/croauto</contextPath>
+						<contextPath>/</contextPath>
 						<extraClasspath>${basedir}/target/config/,${basedir}/target/version/</extraClasspath>
 					</webAppConfig>
 					<systemProperties>

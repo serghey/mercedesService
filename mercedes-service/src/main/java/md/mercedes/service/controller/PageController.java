@@ -10,5 +10,20 @@ public class PageController {
     public String indexPage(){
         return "/index.html";
     }
+	
+	@RequestMapping("/registration")
+    public String registrationPage(){
+        return "/register.jsp";
+    }
+	
+	@RequestMapping("/factura")
+    public String facturaPage(){
+        return "/factura.html";
+    }
+	
+	@RequestMapping("/history")
+    public String historyPage(){
+        return "/history.html";
+    }
 
 }
